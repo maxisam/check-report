@@ -1,20 +1,20 @@
 import * as core from '@actions/core';
 import {inspect} from 'util';
 import {getInputs, getOctokit, getOwnerRepo} from './common';
-import {createActionRequest, DispatchEventRequest} from './create-action-request';
+import {createActionRequest, IRequestPayload} from './create-action-request';
 
 async function run(): Promise<void> {
   const inputs = getInputs();
   const [owner, repo] = getOwnerRepo(inputs.owner, inputs.repository);
-  const octokit = getOctokit(inputs.authToken, 'github-action');
-  let request: DispatchEventRequest;
+  const octokit = getOctokit(inputs.authToken, 'github-action-create-check-report');
+  let request: IRequestPayload;
 
   try {
-    request = createActionRequest(owner, repo);
-    core.debug(`dispatch event request: ${inspect(request)}`);
+    request = createActionRequest(owner, repo, inputs);
+    core.debug(`☀️ request: ${inspect(request)}`);
   } catch (error) {
     if (error instanceof Error) {
-      core.setFailed(`Error creating status request object: ${error.message}`);
+      core.setFailed(`Error creating request object: ${error.message}`);
     }
     return;
   }
@@ -23,7 +23,7 @@ async function run(): Promise<void> {
     core.setFailed('Error creating octokit:\noctokit was null');
   } else {
     try {
-      await octokit.rest.repos.getViews(request);
+      await octokit.checks.create(request);
     } catch (error) {
       core.debug(inspect(error));
       if (error instanceof Error) {

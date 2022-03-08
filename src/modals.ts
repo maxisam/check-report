@@ -1,11 +1,25 @@
 export enum INPUTS {
   authToken = 'authToken',
   owner = 'owner',
-  repository = 'repository'
+  repository = 'repository',
+  checkName = 'checkName',
+  sha = 'sha',
+  status = 'status',
+  conclusion = 'conclusion',
+  summary = 'summary',
+  content = 'content',
+  detailsUrl = 'detailsUrl'
 }
 
 export interface IInputs {
-  authToken: string
-  owner: string
-  repository: string
+  authToken: string;
+  owner: string;
+  repository: string;
+  checkName: string;
+  sha: string;
+  status: string;
+  conclusion: string;
+  summary: string;
+  content: string;
+  detailsUrl: string;
 }

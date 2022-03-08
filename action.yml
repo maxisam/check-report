@@ -7,7 +7,8 @@ branding:
 inputs:
   authToken:
     description: 'Use your own token if you need to trigger other workflows'
-    required: true  
+    default: ${{ github.token }}
+    required: false
   owner:
     description: 'Repostory owner, defaults to context github.repository_owner if omited'
     default: ${{ github.repository_owner }}
@@ -16,6 +17,36 @@ inputs:
     description: 'Repository, default to context github.repository if omited'
     default: ${{ github.repository }}
     required: false
+  checkName:
+    description: 'Name of the check'
+    default: Check Report
+    required: false
+  sha:
+    description: 'Github SHA'
+    default: ${{ github.sha }}
+    required: false
+  status:
+    description: 'Check Status'
+    default: completed
+    required: false
+  conclusion:
+    description: 'Conclusion'
+    default: success
+    required: false
+  summary:
+    description: 'Summary'
+    default: 'Summary'
+    required: false
+  content:
+    description: 'Content'
+    default: ''
+    required: false
+  detailsUrl:
+    description: 'details url'
+    default: ''
+    required: false
+  
+  
 runs:
   using: 'node16'
   main: 'dist/index.js'
