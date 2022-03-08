@@ -62,3 +62,6 @@ jobs:
             ## Check Report Example
             - ☀️ everything works
           detailsUrl: "https://github.com/maxisam/check-report"
+
+  test-workflow:
+    uses: maxisam/check-report/.github/workflows/.workflow-a.yml@main

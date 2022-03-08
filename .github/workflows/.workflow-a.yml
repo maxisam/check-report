@@ -1,0 +1,19 @@
+name: workflow-a
+
+on:
+  workflow_call:
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: ./
+      with:
+        authToken: ${{ secrets.GITHUB_TOKEN }}
+        checkName: "CI Check Report"
+        summary: "Check Summary"
+        content: |
+          ## Check Report Example for workflow
+          - ☀️ workflow works
+        detailsUrl: "https://github.com/maxisam/check-report"
