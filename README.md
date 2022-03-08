@@ -6,9 +6,9 @@ Create a check report for your workflow. Basically it utilizes [check-run](https
 
 ## Example
 
-https://github.com/maxisam/check-report/runs/5468373477?check_suite_focus=true
+[example workflow](https://github.com/maxisam/check-report/runs/5468373477?check_suite_focus=true)
 
-https://user-images.githubusercontent.com/456807/157306240-dc0b18fa-8abc-4dcd-8bd0-b5f0398c0f6d.png
+![example](https://user-images.githubusercontent.com/456807/157306240-dc0b18fa-8abc-4dcd-8bd0-b5f0398c0f6d.png)
 
 ```yml
 - uses: maxisam/check-report@v1
