@@ -1,9 +1,9 @@
-name: 'Your name here'
-description: 'Provide a description here'
-author: 'Your name or organization here'
+name: 'Create Check Report'
+description: 'Create a check report by using check-run'
+author: 'maxisam'
 branding:
-  icon: send
-  color: purple
+  icon: file-text
+  color: green
 inputs:
   authToken:
     description: 'Use your own token if you need to trigger other workflows'
@@ -38,11 +38,11 @@ inputs:
     default: 'Summary'
     required: false
   content:
-    description: 'Content'
+    description: 'Content, you can use multiline with markdown syntax'
     default: ''
     required: false
   detailsUrl:
-    description: 'details url'
+    description: 'Details url'
     default: ''
     required: false
   

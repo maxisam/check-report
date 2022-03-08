@@ -22,3 +22,7 @@ https://user-images.githubusercontent.com/456807/157306240-dc0b18fa-8abc-4dcd-8b
       - ☀️ everything works
     detailsUrl: 'https://github.com/maxisam/check-report'
 ```
+
+## Inputs
+
+Check [Action.yml](https://github.com/maxisam/check-report/blob/main/action.yml) to see all the inputs
