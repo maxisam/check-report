@@ -17,6 +17,8 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
+      - uses: maxisam/action-inspector@main
+
       - uses: actions/checkout@v3
 
       - name: Set Node.js 16.x
@@ -57,6 +59,8 @@ jobs:
           authToken: ${{ secrets.GITHUB_TOKEN }}
           checkName: "CI Check Report"
           conclusion: ${{ needs.build.result }}
+          # check-run is tied to a commit, so for PR, it need to use head.sha
+          sha: ${{ github.event.pull_request.head.sha || github.sha }}
           summary: "Check Summary"
           content: |
             ## Check Report Example
@@ -65,3 +69,5 @@ jobs:
 
   test-workflow:
     uses: maxisam/check-report/.github/workflows/.workflow-a.yml@main
+    with:
+      sha: ${{ github.event.pull_request.head.sha || github.sha }}
