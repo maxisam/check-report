@@ -49,7 +49,7 @@ jobs:
           git config --local user.name "maxisam"
           git add dist/
           git commit -m "chore: build, dist updated"
-          git push origin ${{ github.ref_name }}
+          git push origin ${{ github.head_ref || github.ref_name }}
           
   action:
     runs-on: ubuntu-latest
