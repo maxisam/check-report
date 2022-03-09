@@ -47,7 +47,8 @@ function getInputs() {
         conclusion: core.getInput(modals_1.INPUTS.conclusion),
         summary: core.getInput(modals_1.INPUTS.summary),
         content: core.getInput(modals_1.INPUTS.content),
-        detailsUrl: core.getInput(modals_1.INPUTS.detailsUrl)
+        detailsUrl: core.getInput(modals_1.INPUTS.detailsUrl),
+        imageUrl: core.getInput(modals_1.INPUTS.imageUrl)
     };
     core.debug(`Inputs: ${(0, util_1.inspect)(inputs)}`);
     return inputs;
@@ -116,7 +117,14 @@ function createActionRequest(owner, repo, inputs) {
         output: {
             title: inputs.checkName,
             summary: inputs.summary,
-            text: inputs.content
+            text: inputs.content,
+            images: [
+                {
+                    alt: inputs.checkName,
+                    image_url: inputs.imageUrl,
+                    caption: inputs.summary
+                }
+            ]
         }
     };
 }
@@ -223,6 +231,7 @@ var INPUTS;
     INPUTS["summary"] = "summary";
     INPUTS["content"] = "content";
     INPUTS["detailsUrl"] = "detailsUrl";
+    INPUTS["imageUrl"] = "imageUrl";
 })(INPUTS = exports.INPUTS || (exports.INPUTS = {}));
 
 

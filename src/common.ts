@@ -15,7 +15,8 @@ export function getInputs(): IInputs {
     conclusion: core.getInput(INPUTS.conclusion),
     summary: core.getInput(INPUTS.summary),
     content: core.getInput(INPUTS.content),
-    detailsUrl: core.getInput(INPUTS.detailsUrl)
+    detailsUrl: core.getInput(INPUTS.detailsUrl),
+    imageUrl: core.getInput(INPUTS.imageUrl)
   };
   core.debug(`Inputs: ${inspect(inputs)}`);
   return inputs;

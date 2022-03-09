@@ -45,8 +45,11 @@ inputs:
     description: 'Details url'
     default: ''
     required: false
-  
-  
+  imageUrl:
+    description: The full URL of the image.
+    default: 'https://avatars.githubusercontent.com/in/15368?s=40&v=4'
+    required: false
+ 
 runs:
   using: 'node16'
   main: 'dist/index.js'

@@ -49,7 +49,7 @@ jobs:
           git config --local user.name "maxisam"
           git add dist/
           git commit -m "chore: build, dist updated"
-          git push origin ${{ github.ref_name }}
+          git push origin ${{ github.head_ref || github.ref_name }}
           
   action:
     runs-on: ubuntu-latest
@@ -63,6 +63,7 @@ jobs:
           conclusion: ${{ needs.build.result }}
           # check-run is tied to a commit, so for PR, it need to use head.sha
           sha: ${{ github.event.pull_request.head.sha || github.sha }}
+          imageUrl: https://developers.google.com/web/tools/lighthouse/images/lighthouse-logo.svg
           summary: "Check Summary"
           content: |
             ## Check Report Example
