@@ -17,3 +17,4 @@ jobs:
           ## Check Report Example for workflow
           - ☀️ workflow works
         detailsUrl: "https://github.com/maxisam/check-report"
+        sha: ${{ github.event.pull_request.head.sha || github.sha }}
