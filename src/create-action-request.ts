@@ -1,6 +1,5 @@
 import {RestEndpointMethodTypes} from '@octokit/rest';
 import {IInputs} from './modals';
-// import { stripIndent as markdown } from "common-tags";
 export type IRequestPayload = RestEndpointMethodTypes['checks']['create']['parameters'];
 
 export function createActionRequest(owner: string, repo: string, inputs: IInputs): IRequestPayload {
