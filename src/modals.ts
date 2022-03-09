@@ -8,7 +8,8 @@ export enum INPUTS {
   conclusion = 'conclusion',
   summary = 'summary',
   content = 'content',
-  detailsUrl = 'detailsUrl'
+  detailsUrl = 'detailsUrl',
+  imageUrl = 'imageUrl'
 }
 
 export interface IInputs {
@@ -22,4 +23,5 @@ export interface IInputs {
   summary: string;
   content: string;
   detailsUrl: string;
+  imageUrl: string;
 }

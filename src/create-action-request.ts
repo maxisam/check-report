@@ -15,7 +15,14 @@ export function createActionRequest(owner: string, repo: string, inputs: IInputs
     output: {
       title: inputs.checkName,
       summary: inputs.summary,
-      text: inputs.content
+      text: inputs.content,
+      images: [
+        {
+          alt: inputs.checkName,
+          image_url: inputs.imageUrl,
+          caption: inputs.summary
+        }
+      ]
     }
   };
 }
