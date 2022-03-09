@@ -17,8 +17,8 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
+      - uses: maxisam/action-inspector@main
       - uses: actions/checkout@v3
-
       - name: Set Node.js 16.x
         uses: actions/setup-node@v3
         with:
